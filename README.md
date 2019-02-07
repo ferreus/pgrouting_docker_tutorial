@@ -382,4 +382,4 @@ It should print the route to screen.
 
 For C++ check out [C++ section](/cpp/README.md):
 
-For C# check out [C# section[(/dotNet/README.md)
+For C# check out [C# section](/dotNet/README.md)
