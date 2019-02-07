@@ -286,7 +286,7 @@ So when someone request this URL, it will receive a json list with route coordin
 
 Let's install python flask
 ```bash
-pip install flask-restfull
+pip install flask-restful
 ```
 
 Now let's see our `server.py`
