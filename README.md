@@ -337,7 +337,7 @@ def get_db():
             print("Unable to connect to database...")
             print(e)
             raise e
-    return None
+    return conn
 
 
 
@@ -363,7 +363,7 @@ class Route(Resource):
 api.add_resource(Route, '/api/v1/route')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')
 
 ```
 
