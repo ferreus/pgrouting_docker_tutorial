@@ -23,7 +23,7 @@ def route(cursor,source,dest):
 
 def main():
     try:
-        connect_str = "dbname='city_routing' user='user' password='user' host='localhost'"
+        connect_str = "dbname='routing_db' user='user' password='user' host='localhost'"
         conn = psql.connect(connect_str)
         cursor = conn.cursor()
         cursor.execute('select pgr_version();');
