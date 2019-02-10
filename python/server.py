@@ -2,6 +2,7 @@ from flask import Flask
 from flask_restful import Resource, Api,reqparse
 import psycopg2 as psql
 import json
+from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 api = Api(app)
@@ -70,4 +71,6 @@ class Route(Resource):
 api.add_resource(Route, '/api/v1/route')
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    #app.run(debug=True,host='0.0.0.0')
+    http_server = WSGIServer(('',5000),app)
+    http_server.serve_forever()
