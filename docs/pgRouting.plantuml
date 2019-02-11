@@ -1,0 +1,19 @@
+@startuml
+
+title Our pgRouting docker image
+
+class ubuntu
+class postgress_pg11
+class pgrouting_v2_6_2_postgresql_11
+class israel_pgrouting
+
+note right of pgrouting_v2_6_2_postgresql_11: Install:\n* pgrouting\n* osm2pgrouting\n
+note right of postgress_pg11: Install postgresql
+note right of israel_pgrouting: * Install osmconvert\n* Add Israel map\n* Create database for Israel\n
+
+ubuntu <|-down- postgress_pg11: Based on
+postgress_pg11 <|-down-  pgrouting_v2_6_2_postgresql_11: Based on
+pgrouting_v2_6_2_postgresql_11 <|-down- israel_pgrouting: Based on
+
+
+@enduml

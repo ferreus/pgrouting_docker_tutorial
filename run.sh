@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 set -e
 
 log(){
@@ -54,18 +52,17 @@ if [ "$1" = 'run_default' ]; then
 
 	### OUR MODIFICATION (Do our database setup)
     log "Configurating and adding postgres user to the database..."
-	su postgres -c "psql -U postgres -p 5432 -c \"CREATE ROLE \\\"user\\\" SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN PASSWORD 'user';\""
-	#wget https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf -O /maps/israel.osm.pbf
-	log "Preparing osm file..."
-	osmconvert /maps/israel.osm.pbf --drop-author --drop-version --out-osm -o=/maps/israel.osm
-	log "Creating routing database..."
-	su postgres -c "echo \"Creating db...\" && PGPASSWORD=user createdb -U user -w routing_db"
-	log "Preparing routing database..."
-	su postgres -c "PGPASSWORD=user psql -d routing_db -U user -w -c \"CREATE EXTENSION postgis;CREATE EXTENSION pgrouting;\""
-	log "Loading osm into database..."
-	ln -s /usr/local/share/osm2pgrouting /usr/share/osm2pgrouting
-	osm2pgrouting -f /maps/israel.osm -d routing_db -U user -W user
-	### END OF OUR MODIFICATION
+    su postgres -c "psql -U postgres -p 5432 -c \"CREATE ROLE \\\"user\\\" SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN PASSWORD 'user';\""
+    #wget https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf -O /maps/israel.osm.pbf
+    log "Preparing osm file..."
+    osmconvert /maps/israel.osm.pbf --drop-author --drop-version --out-osm -o=/maps/israel.osm
+    log "Creating routing database..."
+    su postgres -c "echo \"Creating db...\" && PGPASSWORD=user createdb -U user -w routing_db"
+    log "Preparing routing database..."
+    su postgres -c "PGPASSWORD=user psql -d routing_db -U user -w -c \"CREATE EXTENSION postgis;CREATE EXTENSION pgrouting;\""
+    log "Loading osm into database..."
+    osm2pgrouting -f /maps/israel.osm -d routing_db -U user -W user
+  ### END OF OUR MODIFICATION
 
 
     log "Stopping the server..."
