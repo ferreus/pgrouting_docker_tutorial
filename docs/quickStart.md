@@ -113,6 +113,7 @@ public | ways_vertices_pgr_id_seq | sequence | user
 Now, let's try and find a node nearest the lat,lon point:
 
 Some notable locations in haifa:
+
 |     Address       |    Lat    |    Lon    |
 | ----------------  | --------- | --------  |
 | Haifa, Matam      | 32.789795 | 34.959672 |
