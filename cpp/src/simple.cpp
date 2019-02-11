@@ -16,5 +16,5 @@ int main(void)
         res.set_content(j.dump(4), "application/json");
     });
 
-    svr.listen("localhost", 1234);
+    svr.listen("0.0.0.0", 1234);
 }

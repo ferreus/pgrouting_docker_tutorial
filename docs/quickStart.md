@@ -374,3 +374,7 @@ Now open new terminal tab and run query using CURL:
     curl "http://localhost:5000/api/v1/route?from=34.959672,32.789795&to=35.014519,32.783076"
 
 It should print the route to screen.
+
+## Congratulations
+
+You've completed this section, but your Docker knowledge is incomplete without knowledge of Dockerfiles, proceed to the [next section](/docs/dockerfile.md)

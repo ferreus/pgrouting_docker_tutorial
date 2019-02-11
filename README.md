@@ -6,6 +6,8 @@ This is a simple tutorial on how to start a pgrouting docker container, populate
 1. [Installing Docker on Ubuntu 18.04](/docs/docker.md)
 2. [PG Routing Quick Start](/docs/quickStart.md)
 3. [Creating Docker images with Dockerfiles](/docs/dockerfile.md)
+4. [Creating Docker image for our python query server](/python/README.md)
+5. [Creating Docker image for our pgRouting database](/docs/pgrouting_dockerfile)
 
 
 ## Client/Server Examples in various languages

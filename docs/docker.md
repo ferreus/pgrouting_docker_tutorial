@@ -97,3 +97,6 @@ To view system-wide information about Docker, use:
     docker info
 
 
+## Congratulations
+
+You've completed this section, proceed to [pgRouting Quick Start](/docs/quickStart.md)

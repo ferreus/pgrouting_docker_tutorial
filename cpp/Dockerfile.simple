@@ -1,0 +1,18 @@
+FROM ubuntu:bionic
+
+#Install g++, the -y switch is to answer yes on all promts
+RUN apt update && apt install -y g++
+ADD src /app/src
+WORKDIR /app/src
+RUN g++ -o /app/server -std=c++11 simple.cpp -lpthread
+WORKDIR /app
+# We do not wish to keep the source inside container
+# Later we will learn that we can use what is called a 'builder' container
+# That will let us keep building and running completely separated
+# Which will remove g++ from the final docker image, as it is not needed for *running*
+# For now, a simple rm -rf /app/src will do
+RUN rm -rf /app/src
+
+# This is our entry point, the main function if you like
+# When the docker starts, it will start the server
+ENTRYPOINT ["/bin/sh", "-c", "/app/server"]
