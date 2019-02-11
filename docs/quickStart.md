@@ -114,11 +114,6 @@ Now, let's try and find a node nearest the lat,lon point:
 
 Some notable locations in haifa:
 
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-
 |     Address       |    Lat    |    Lon    |
 | ----------------  | --------- | --------  |
 | Haifa, Matam      | 32.789795 | 34.959672 |
