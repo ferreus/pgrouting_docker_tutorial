@@ -15,7 +15,7 @@ FROM pgrouting/pgrouting:v2.6.2-postgresql_11
 RUN apt install -y osmctools
 
 # Fix the location of osm2pgrouting
-RUN ln -s /usr/local/share/osm2pgrouting /usr/share/osm2pgroutingInheritance
+RUN ln -s /usr/local/share/osm2pgrouting /usr/share/osm2pgrouting
 
 # Add maps
 ADD maps /maps
