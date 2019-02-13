@@ -120,7 +120,7 @@ Our directory structure looks like:
 FROM ubuntu:bionic
 
 #Install g++
-RUN apt update && apt install g++
+RUN apt-get update && apt-get install -y g++
 ADD src /app/src
 WORKDIR /app/src
 RUN g++ -o /app/server -std=c++11 simple.cpp -lpthread
